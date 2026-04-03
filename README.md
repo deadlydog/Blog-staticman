@@ -33,6 +33,13 @@ Before using Akismet I received a ton of spam comment PRs on my blog, but after 
 
 Keys and passwords stored in my blog's public config files have been encrypted using my Staticman instance's encryption endpoint, as per [the Staticman encryption docs](https://staticman.net/docs/encryption).
 
+### Troubleshooting
+
+If there's an issue and comments are not posting, try submitting a comment on the blog website with the browser's developer tools open, and check the network tab for the request and any errors.
+That should also give you the POST command being used, so you can test it in other tools, like PowerShell or Postman.
+
+You can also enabled App Service Logs on the Azure App Service, and watch the Log Stream as you reproduce the problem for any errors that are occurring in the staticman web app.
+
 ### Initial problems after deploying to Azure and resolution
 
 After deploying the code to Azure, I was getting a `You do not have permission to view this directory or page.` error message when viewing the site root <https://dansblog-staticman.azurewebsites.net>.
